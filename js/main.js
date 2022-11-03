@@ -2,9 +2,12 @@
 let notas = []
 
 const AgregarNota = () =>{
+    if (document.querySelector("#nota").value >= 0){
     notas.push(parseInt( document.querySelector("#nota").value))
     const verArray = document.querySelector("#Notas")
     verArray.value = `Numeros: ${notas.toString()}`
+}
+else alert("Ingrese una nota valida")
 }
 
  
