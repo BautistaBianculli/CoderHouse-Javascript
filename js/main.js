@@ -3,11 +3,13 @@ let notas = []
 
 const AgregarNota = () =>{
     notas.push(parseInt( document.querySelector("#nota").value))
+    const verArray = document.querySelector("#Notas")
+    verArray.value = `Numeros: ${notas.toString()}`
 }
 
  
 function PromediarNotas() {
-    let prom = document.querySelector(".promedio")
+    let prom = document.querySelector("#promedio")
     let suma = 0;
     if (notas.length === 0){
         return 0;
@@ -20,7 +22,7 @@ function PromediarNotas() {
     
     // }
     prom.value = `Promedio : ${ suma / notas.length}`
-   
+    
 }
 
 function BorrarArray(){
@@ -28,6 +30,8 @@ function BorrarArray(){
         notas.shift();
         console.log(notas.length)
     }
-    let prom = document.querySelector(".promedio")
+    let prom = document.querySelector("#promedio")
     prom.value = "No Calculado"
+    prom = document.querySelector("#Notas")
+    prom.value = "No tiene numeros agregados"
 }
