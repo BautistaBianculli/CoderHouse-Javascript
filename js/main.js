@@ -1,6 +1,14 @@
 
 let notas = []
 
+const Materias = [
+    {nombre: "Fisica", Promedio: 6},
+    {nombre: "Matematica", Promedio:7},
+    {nombre: "Literatura", Promedio: 6}
+]
+
+localStorage.setItem("Materias",JSON.stringify(Materias))
+
 const AgregarNota = () =>{
     if (document.querySelector("#nota").value >= 0){
     notas.push(parseInt( document.querySelector("#nota").value))
@@ -10,7 +18,7 @@ const AgregarNota = () =>{
 else alert("Ingrese una nota valida")
 }
 
- 
+
 function PromediarNotas() {
     let prom = document.querySelector("#promedio")
     let suma = 0;
@@ -25,7 +33,6 @@ function PromediarNotas() {
     
     // }
     prom.value = `Promedio : ${ suma / notas.length}`
-    
 }
 
 function BorrarArray(){
